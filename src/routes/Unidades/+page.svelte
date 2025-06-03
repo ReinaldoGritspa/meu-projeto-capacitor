@@ -6,31 +6,31 @@
     <br />
     <h2>Deseja converter qual unidade?</h2>
     <div class="cards-container">
-        <a href="/convuni/massa" class="card text-decoration-none" aria-label="Converter Massa">
+        <a href="/Unidades/massa" class="card text-decoration-none" aria-label="Converter Massa">
             <img src="peso.png" class="card-img-top" alt="Ícone da massa">
             <p>MASSA</p>
         </a>
-        <a href="/convuni/distancia" class="card text-decoration-none" aria-label="Converter Distância">
+        <a href="/Unidades/distancia" class="card text-decoration-none" aria-label="Converter Distância">
             <img src="distancia.png" class="card-img-top" alt="Ícone de distância">
             <p>DISTÂNCIA</p>
         </a>
-        <a href="/convuni/temperatura" class="card text-decoration-none" aria-label="Converter Temperatura">
+        <a href="/Unidades/temperatura" class="card text-decoration-none" aria-label="Converter Temperatura">
             <img src="temp.png" class="card-img-top" alt="Ícone de temperatura">
             <p>TEMPERATURA</p>
         </a>
-        <a href="/convuni/tempo" class="card text-decoration-none" aria-label="Converter Tempo">
+        <a href="/Unidades/tempo" class="card text-decoration-none" aria-label="Converter Tempo">
             <img src="tempo.png" class="card-img-top" alt="Ícone de tempo">
             <p>TEMPO</p>
         </a>
-        <a href="/convuni/vel" class="card text-decoration-none" aria-label="Converter Velocidade">
+        <a href="/Unidades/vel" class="card text-decoration-none" aria-label="Converter Velocidade">
             <img src="vel.png" class="card-img-top" alt="Ícone de velocidade">
             <p>VELOCIDADE</p>
         </a>
-        <a href="/convuni/moeda" class="card text-decoration-none" aria-label="Converter Moeda">
+        <a href="/Unidades/moeda" class="card text-decoration-none" aria-label="Converter Moeda">
             <img src="coin.png" class="card-img-top" alt="Ícone de Moeda">
             <p>MOEDA</p>
         </a>
-        <a href="/convuni/area" class="card text-decoration-none" aria-label="Converter Área">
+        <a href="/Unidades/area" class="card text-decoration-none" aria-label="Converter Área">
             <img src="area.png" class="card-img-top" alt="Ícone de Área">
             <p>ÁREA</p>
         </a>

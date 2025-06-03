@@ -3,6 +3,7 @@
   </script>
   
   {#each tarefas as tarefa}
+  
     <div class="input-group mb-1 {tarefa.status == 1 ? 'text-decoration-line-through' : ''}">
       {#if tarefaEditando == tarefa}
         <input class="form-control form-control-lg" bind:value={conteudoTarefaEditando} />
@@ -15,4 +16,6 @@
         <button class="btn btn-danger input-group-text" aria-label="excluir" data-bs-toggle="modal" data-bs-target="#alertaModal" onclick={() => excluirTarefa(tarefa)}><i class="bi bi-trash"></i></button>
       {/if}
     </div>
+    
   {/each}
+  

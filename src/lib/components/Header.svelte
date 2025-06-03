@@ -8,9 +8,9 @@
         <i class="bi bi-three-dots-vertical"></i>
       </button>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li><button class="dropdown-item">Action</button></li>
-        <li><button class="dropdown-item">Another action</button></li>
-        <li><button class="dropdown-item">Something else here</button></li>
+        <li> <a class="nav-link" href="/memebar/Piadas"> Piadas </a> </li>
+        <li><a class="nav-link" href="/memebar/Futuro"> Prever o Futuro </a></li>
+        <li><a class="nav-link" href="/memebar/cantadas"> Cantadas </a></li> 
       </ul>
     </div>
   </nav>
