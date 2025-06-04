@@ -18,7 +18,7 @@
                 <a class="nav-link" href="/Unidades">Conversor de Unidade</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Calculadora">Calculadora</a>
+                <a class="nav-link" href="/calculadora">Calculadora</a>
             </li>
         </ul>
       <!-- <form class="d-flex mt-3" role="search">
