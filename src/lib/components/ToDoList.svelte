@@ -1,9 +1,9 @@
 <script>
+  	import { flip } from 'svelte/animate';
     let { tarefas, tarefaEditando, conteudoTarefaEditando = $bindable(), confirmarEdicao, cancelarEdicao, alterarStatus, editarTarefa, excluirTarefa } = $props();
   </script>
   
-  {#each tarefas as tarefa}
-  
+  {#each tarefas as tarefa} 
     <div class="input-group mb-1 {tarefa.status == 1 ? 'text-decoration-line-through' : ''}">
       {#if tarefaEditando == tarefa}
         <input class="form-control form-control-lg" bind:value={conteudoTarefaEditando} />

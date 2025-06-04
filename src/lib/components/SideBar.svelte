@@ -18,8 +18,8 @@
                 <a class="nav-link" href="/Unidades">Conversor de Unidade</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Calculadora"> Calculadora </a>
-          </li>
+                <a class="nav-link" href="/Calculadora">Calculadora</a>
+            </li>
         </ul>
       <!-- <form class="d-flex mt-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" />
