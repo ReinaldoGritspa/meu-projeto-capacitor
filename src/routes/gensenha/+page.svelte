@@ -7,8 +7,8 @@
 	let maiuscula = $state(true);
 	let numericos = $state(true);
 	let caracteresespeciais = $state(true);
-    let lista = $state(['']);
-    let listatrue = $state(false);
+	let lista = $state(['']);
+	let listatrue = $state(false);
 
 	function atualizarCaracteres() {
 		let novaLista = '';
@@ -30,31 +30,30 @@
 		senha = novaSenha;
 	}
 
-    // Gerar lista de senhas
-    function gerarlista() {
-        listatrue = true;
-        lista = [];
-        for (let i = 0; i <= 5; i++) {
-            let novaSenha = [];
-            for (let j = 0; j < maximo; j++) {
-                let aleatorio = caracteres.charAt(Math.floor(Math.random() * caractamanho));
-                novaSenha.push(aleatorio);
-            }
-            lista.push(novaSenha.join(''));
-        }
-        console.log(lista);
-    }
+	function gerarlista() {
+		listatrue = true;
+		lista = [];
+		for (let i = 0; i <= 5; i++) {
+			let novaSenha = [];
+			for (let j = 0; j < maximo; j++) {
+				let aleatorio = caracteres.charAt(Math.floor(Math.random() * caractamanho));
+				novaSenha.push(aleatorio);
+			}
+			lista.push(novaSenha.join(''));
+		}
+		console.log(lista);
+	}
 
-    function copiarsenha(e) {
-        navigator.clipboard.writeText(senha.join(''));
-        setTimeout(() => {
-            e.target.innerText = 'Copiado!';
-            setTimeout(() => {
-                e.target.innerText = 'Copiar senha 🔗';
-            }, 1000);
-        }, 100);
-    }
-    
+	function copiarsenha(e) {
+		navigator.clipboard.writeText(senha.join(''));
+		setTimeout(() => {
+			e.target.innerText = 'Copiado!';
+			setTimeout(() => {
+				e.target.innerText = 'Copiar senha 🔗';
+			}, 1000);
+		}, 100);
+	}
+
 	atualizarCaracteres();
 </script>
 
@@ -65,11 +64,15 @@
 		<span>{senha.join('')}</span>
 	</div>
 
-	<label for="range">Tamanho da senha: <output id="num"><input type="number" bind:value={maximo} style="width: 50px;"></output></label>
+	<label for="range"
+		>Tamanho da senha: <output id="num"
+			><input type="number" bind:value={maximo} style="width: 50px;" /></output
+		></label
+	>
 	<input type="range" bind:value={maximo} min="4" max="20" />
-    
-    <button onclick={gerarsenha} class="btn btn-primary">Gerar senha 🔄</button>
-    <button onclick={copiarsenha} class="btn btn-success">Copiar senha 🔗</button>
+
+	<button onclick={gerarsenha} class="btn btn-primary">Gerar senha 🔄</button>
+	<button onclick={copiarsenha} class="btn btn-success">Copiar senha 🔗</button>
 
 	<br /> Letras maiúsculas:
 	<input type="checkbox" id="maiusculas" bind:checked={maiuscula} onchange={atualizarCaracteres} />
@@ -87,29 +90,29 @@
 		bind:checked={caracteresespeciais}
 		onchange={atualizarCaracteres}
 	/>
-    <br /> 
-    <button onclick={gerarlista} class="btn btn-light" style="background-color: #dbdbdb;">Gerar lista de senhas 🗂️</button>
-    {#if listatrue} 
-    <button onclick={() => listatrue = false} class="btn btn-danger">Fechar lista ❌</button>
-    {/if}
- {#if lista.length > 1 && listatrue}
-    {#each lista as item, i}
-        <div class="senha-box">
-            <span>{item}</span>
-            <button onclick={copiarsenha} class="btn btn-success">Copiar senha 🔗</button>
-        </div>
-    {/each}
-    {/if}
-
+	<br />
+	<button onclick={gerarlista} class="btn btn-light" style="background-color: #dbdbdb;"
+		>Gerar lista de senhas 🗂️</button
+	>
+	{#if listatrue}
+		<button onclick={() => (listatrue = false)} class="btn btn-danger">Fechar lista ❌</button>
+	{/if}
+	{#if lista.length > 1 && listatrue}
+		{#each lista as item, i}
+			<div class="senha-box">
+				<span>{item}</span>
+				<button onclick={copiarsenha} class="btn btn-success">Copiar senha 🔗</button>
+			</div>
+		{/each}
+	{/if}
 </div>
 
 <style>
-    *{
-        font-family: sans-serif;
-
-    }
+	* {
+		font-family: sans-serif;
+	}
 	.container {
-        margin-top: 20px;
+		margin-top: 20px;
 		width: 90%;
 		max-width: 400px;
 		background: white;

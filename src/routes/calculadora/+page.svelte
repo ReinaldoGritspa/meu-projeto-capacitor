@@ -75,7 +75,7 @@
         <tbody>
             <tr>
                 <td><button class="btn btn-danger w-100" style="background-color: #ca1444; border-color: #ca1444; height: 80px" onclick={() => clear()}>C</button></td>
-                <td><button class="btn btn-primary w-100" style="background-color: #28424f; border-color: #28424f; height: 80px" onclick={() => press('(')}>&lpar;</button></td>
+         <td><button class="btn btn-primary w-100" style="background-color: #28424f; border-color: #28424f; height: 80px" onclick={() => press('(')}>&lpar;</button></td>
                 <td><button class="btn btn-primary w-100" style="background-color: #28424f; border-color: #28424f; height: 80px" onclick={() => press(')')}>&rpar;</button></td>
                 <td><button class="btn btn-info w-100" style="background-color: #fcae11; border-color: #fcae11; height: 80px" onclick={() => press('/')}>/</button></td>
             </tr>
