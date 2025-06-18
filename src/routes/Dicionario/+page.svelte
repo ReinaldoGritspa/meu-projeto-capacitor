@@ -37,7 +37,7 @@
 	/>
 </div>
 
-<button type="button" onclick={aleatorio} class="btn btn-primary">Palavra aleatória</button>
+<button type="button" onclick={aleatorio} class="btn btn-outline-success">Palavra aleatória</button>
 
 <div>
     <uL>
