@@ -1,41 +1,52 @@
 <script>
-    import { dicionario } from '$lib/dicionario.js';
-  
-    let palavra = '';
-    let filtradas = dicionario;
-  
-    function buscar() {
-      if (palavra === '') {
-        filtradas = dicionario;
-        return;
-      }
-  
-      filtradas = [];
-      for (const termo of dicionario) {
-        if (termo.palavra.toLowerCase().startsWith(palavra.toLowerCase())) {
-          filtradas.push(termo);
-        }
-      }
-    }
-  </script>
-  
-  <div>
-    <input
-      class="form-control"
-      placeholder="Digite uma palavra"
-      oninput={buscar}
-      bind:value={palavra}
-    />
-  </div>
-  
-  <div>
-    <ul>
-      {#each filtradas as termo}
-        <li>
-          <!-- Link para a página de detalhes de cada palavra -->
-          <a href={`/Dicionario/${termo.palavra.toLowerCase()}`}>{termo.palavra}</a>
-        </li>
-      {/each}
-    </ul>
-  </div>
-  
+	import { dicionario } from '$lib/dicionario.js';
+	import { goto } from '$app/navigation';
+
+	let palavra = $state('');
+	let filtradas = $state(dicionario);
+
+	function buscar() {
+	if (palavra.trim() === '') {
+		filtradas = dicionario;
+		return;
+	}
+
+	const palavraLower = palavra.toLowerCase();
+	filtradas = [];
+	for (const termo of dicionario) {
+		if (termo.palavra.toLowerCase().startsWith(palavraLower)) {
+			filtradas.push(termo);
+		}
+	}
+}
+
+
+	function aleatorio(){
+		const indiceAleatorio = Math.floor(Math.random() * dicionario.length);
+		palavra = dicionario[indiceAleatorio].palavra;
+		goto(`/dicionario/${palavra}`);
+	}
+</script>
+
+<div>
+	<input
+		class="form-control"
+		placeholder="Digite uma palavra"
+		oninput={buscar}
+		bind:value={palavra}
+	/>
+</div>
+
+<button type="button" onclick={aleatorio} class="btn btn-primary">Palavra aleatória</button>
+
+<div>
+    <uL>
+		<ol>
+        {#each filtradas as termo}
+            <li>
+                <a href="/dicionario/{termo.palavra}">{termo.palavra}</a>
+            </li>
+        {/each}
+	</ol>
+    </uL>
+</div>
