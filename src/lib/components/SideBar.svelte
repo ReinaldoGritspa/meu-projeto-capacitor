@@ -24,7 +24,7 @@
           <a class="nav-link" href="/calculadora"><i class="bi bi-calculator me-2"></i>Calculadora</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="/dicionario"><i class="bi bi-book me-2"></i>Dicionário</a>
+          <a class="nav-link" href="/Dicionario"><i class="bi bi-book me-2"></i>Dicionário</a>
         </li>
         <li class="nav-item mb-2">
           <a class="nav-link" href="/casadeapostas"><i class="bi bi-dice-5 me-2"></i> Casa de Aposta</a>
