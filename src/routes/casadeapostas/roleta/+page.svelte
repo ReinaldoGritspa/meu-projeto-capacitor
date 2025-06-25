@@ -17,7 +17,7 @@
 
 	async function spin() {
 		if (isSpinning) return;
-		if (saldoAtual <= 0) {
+		if (saldoAtual <= -600) {
 			resultMessage = 'Saldo insuficiente para jogar. Reinicie a banca.';
 			return;
 		}

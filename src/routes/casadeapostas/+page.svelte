@@ -9,15 +9,36 @@
 	let mostrarConfirm = false;
 
 	let saldoAtual;
-	const unsubscribe = saldo.subscribe(value => {
+	const unsubscribe = saldo.subscribe((value) => {
 		saldoAtual = value;
 	});
 
 	const jogos = [
 		{
 			rota: '/casadeapostas/sorteadordenomes',
-			nome: 'Sorteador de Nomes',
+			nome: 'Sorteador de Nomes Sem Aposta',
 			img: 'https://st.depositphotos.com/1001976/2015/v/450/depositphotos_20157375-stock-illustration-shiny-four-leaf-clover-with.jpg'
+		},
+		{
+			rota: '/casadeapostas/mine',
+			nome: 'Campo Minado',
+			img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb5Mrib52-WtYIOejr6GSkOxtWaKBKmuLRD-txEFERlTi4Kbr05_rt3oSlVnXLJTLCICM&usqp=CAU'
+		},
+		
+		{
+			rota: '/casadeapostas/ticket',
+			nome: 'Raspadinha',
+			img: ''
+		},
+		{
+			rota: '/casadeapostas/piramide',
+			nome: 'Piramide',
+			img: ''
+		},
+		{
+			rota: '/casadeapostas/crash',
+			nome: 'Aviaozinho',
+			img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfXwM__eS0GdJq08UD-P8TSlaxWaXGEe1mT4uVTpiBKH8BGJ3JReL7LlMqGw5XA5UdcMo&usqp=CAU'
 		},
 		{
 			rota: '/casadeapostas/roleta',
@@ -33,7 +54,7 @@
 			rota: '/casadeapostas/dice',
 			nome: 'Dice',
 			img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT60MhdTN3P20RH_alvm1oAQcjHrMqA3inFNWWNSaEq4qpl-xALe0XxXKcAerH1Oml3V_o&usqp=CAU'
-		},
+		}
 	];
 
 	function acessar(jogo) {
@@ -45,7 +66,8 @@
 		}
 
 		if (saldoAtual >= limitePositivo) {
-			mensagem = 'Parabéns! Você ficou rico! Tenha mais juízo. Reinicie a banca para continuar.';
+			mensagem =
+				'Parabéns! Você ficou rico! Tenha juízo com o dinheiro. Reinicie a banca para continuar.';
 			return;
 		}
 
@@ -76,7 +98,8 @@
 				class="logo"
 			/>
 			<h1>Fortune Panda</h1>
-			<p class="subtexto">Entre no mundo da sorte com estilo e ousadia.</p>
+			<p class="subtexto">Entre no mundo da sorte !</p>
+			<p class="subtexto">Aposte com juizo , site para +18</p>
 		</header>
 
 		<div class="cards">
@@ -177,7 +200,9 @@
 		border-radius: 12px;
 		padding: 1rem;
 		cursor: pointer;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
 		text-align: center;
 		color: white;
 		font-weight: bold;

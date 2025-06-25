@@ -57,7 +57,7 @@
   }
 
   function iniciarJogo() {
-    if (get(saldo) < apostaFixa) {
+    if (get(saldo) <= -600) {
       mensagem = `Saldo insuficiente para apostar R$${apostaFixa}.`;
       return;
     }
@@ -93,23 +93,25 @@
 
     const pontosJogador = calcularPontos(jogador);
     const pontosBanca = calcularPontos(banca);
-
-    if (pontosJogador > 21) {
-      mensagem = 'Você estourou! Perdeu a aposta.';
-      saldo.update(n => n - apostaFixa);
-    } else if (pontosBanca > 21) {
-      mensagem = 'Banca estourou! Você ganhou!';
-      saldo.update(n => n + apostaFixa);
-    } else if (pontosJogador > pontosBanca) {
-      mensagem = 'Você ganhou!';
-      saldo.update(n => n + apostaFixa);
-    } else if (pontosJogador === pontosBanca) {
-      mensagem = 'Empate! Sua aposta foi devolvida.';
-      // saldo não muda
-    } else {
-      mensagem = 'Você perdeu!';
-      saldo.update(n => n - apostaFixa);
-    }
+    if (pontosJogador === 21) {
+  mensagem = 'Você fez 21! Vitória imediata!';
+  saldo.update(n => n + apostaFixa);
+} else if (pontosJogador > 21) {
+  mensagem = 'Você estourou! Perdeu a aposta.';
+  saldo.update(n => n - apostaFixa);
+} else if (pontosBanca > 21) {
+  mensagem = 'Banca estourou! Você ganhou!';
+  saldo.update(n => n + apostaFixa);
+} else if (pontosJogador > pontosBanca) {
+  mensagem = 'Você ganhou!';
+  saldo.update(n => n + apostaFixa);
+} else if (pontosJogador === pontosBanca) {
+  mensagem = 'Empate! Sua aposta foi devolvida.';
+  // saldo não muda
+} else {
+  mensagem = 'Você perdeu!';
+  saldo.update(n => n - apostaFixa);
+}
 
     apostaEmAndamento = false;
   }

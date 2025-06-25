@@ -22,12 +22,12 @@
 	}
 
 	async function rolarDados() {
-		if (animando) return; // bloqueia só enquanto anima
+		if (animando) return;
 
 		animando = true;
-		mensagem = ''; // limpa mensagem para suspense
+		mensagem = '';
 
-		for(let i = 0; i < 10; i++) {
+		for (let i = 0; i < 10; i++) {
 			dado1 = Math.floor(Math.random() * 6) + 1;
 			dado2 = Math.floor(Math.random() * 6) + 1;
 			await sleep(70);
@@ -38,7 +38,7 @@
 		const soma = dado1 + dado2;
 
 		let novoSaldo = saldoAtual;
-		if (soma > 8) {
+		if (soma > 7) {
 			novoSaldo += valorAposta;
 			mensagem = `Você tirou ${soma} e ganhou R$ ${valorAposta}!`;
 		} else {
@@ -46,7 +46,7 @@
 			mensagem = `Você tirou ${soma} e perdeu R$ ${valorAposta}! Tente novamente.`;
 		}
 
-		if (novoSaldo <= limiteNegativo) {
+		if (novoSaldo <= -600) {
 			mensagem = 'Você faliu! Reinicie a página para tentar de novo.';
 		} else if (novoSaldo >= limitePositivo) {
 			mensagem = 'Parabéns! Você ficou rico! Reinicie a página para continuar.';
@@ -55,7 +55,7 @@
 		saldo.set(novoSaldo);
 		animando = false;
 	}
-
+	
 	function voltar() {
 		goto('/casadeapostas');
 	}
@@ -70,12 +70,12 @@
 				class="logo"
 			/>
 			<h1>Dice</h1>
-			<p class="subtexto">Role dois dados. Você precisa tirar uma soma maior que 8 para ganhar R$ 100. Caso contrário, perde R$ 100.</p>
+			<p class="subtexto">Role dois dados. Você precisa tirar uma soma maior que 7 para ganhar R$ 100. Caso contrário, perde R$ 100.</p>
 		</header>
 
 		<div class="dados">
-			<div class="dado">{dado1}</div>
-			<div class="dado">{dado2}</div>
+			<div class="dado {animando ? 'animar' : ''}">{dado1}</div>
+			<div class="dado {animando ? 'animar' : ''}">{dado2}</div>
 		</div>
 
 		<div class="botoes">
@@ -98,6 +98,28 @@
 </div>
 
 <style>
+	@keyframes vibrate {
+		0% { transform: translate(0); }
+		20% { transform: translate(-2px, 2px) rotate(-3deg); }
+		40% { transform: translate(-2px, -2px) rotate(3deg); }
+		60% { transform: translate(2px, 2px) rotate(-3deg); }
+		80% { transform: translate(2px, -2px) rotate(3deg); }
+		100% { transform: translate(0); }
+	}
+
+	.animar {
+		animation: vibrate 0.35s linear infinite;
+		transform-origin: center;
+	}
+
+	.animar {
+		animation-timing-function: ease-in-out;
+	}
+
+	.animar {
+		animation-iteration-count: infinite;
+	}
+
 	:global(html, body) {
 		margin: 0;
 		padding: 0;
