@@ -28,13 +28,13 @@
 		{
 			rota: '/casadeapostas/ticket',
 			nome: 'Raspadinha',
-			img: ''
+			img: 'https://img.freepik.com/vetores-premium/moeda-de-jogo-de-pixel-art_709240-103.jpg'
 		},
 		{
-			rota: '/casadeapostas/piramide',
-			nome: 'Piramide',
-			img: ''
-		},
+			rota: '/casadeapostas/aposta',
+			nome: 'Aposta de Cartas',
+			img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/A_studio_image_of_a_hand_of_playing_cards._MOD_45148377.jpg/330px-A_studio_image_of_a_hand_of_playing_cards._MOD_45148377.jpg'
+		},	
 		{
 			rota: '/casadeapostas/crash',
 			nome: 'Aviaozinho',
